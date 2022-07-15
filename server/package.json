@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+  
+    "make-model": "npx sequelize-cli model:generate --name user --attributes email:string",
+    "make-seed": "npx sequelize-cli seed:generate --name demo-user",
+    "seed":"npx sequelize-cli db:seed:all",
+    "migrate": "npx sequelize-cli db:migrate",
+    "down": "npx sequelize-cli db:migrate:undo",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
@@ -13,8 +19,12 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "nodemon": "^2.0.16",
+    "nodemon": "^1.3.3",
     "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.0"
+  },
+  "devDependencies": {
     "sequelize-cli": "^6.4.1"
   }
 }
